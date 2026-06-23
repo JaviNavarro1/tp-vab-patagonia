@@ -18,7 +18,7 @@ Analizar la evolución de la participación de las provincias patagónicas (Neuq
 
 ## Datos
 
-- **Fuente principal:** [Desagregación provincial del valor agregado bruto de la Argentina, base 2004 — CEPAL y Ministerio de Economía (MECON)](https://www.cepal.org/es/publicaciones/47900-desagregacion-provincial-valor-agregado-bruto-la-argentina-base-2004). Documento LC/TS.2022/196.
+- **Fuente principal:** [Desagregación provincial del valor agregado bruto de la Argentina, base 2004 — CEPAL y Ministerio de Economía (MECON)](https://www.cepal.org/es/publicaciones/47900-desagregacion-provincial-valor-agregado-bruto-la-argentina-base-2004).
 - **Período:** 2004–2024 (21 años).
 - **Unidad de análisis:** par provincia–sector, con cobertura de las 24 jurisdicciones argentinas (23 provincias + CABA) y 52 sectores de actividad económica clasificados según CIIU Rev. 3.1.
 - **Variable principal:** VAB a precios básicos en millones de pesos constantes de 2004.
