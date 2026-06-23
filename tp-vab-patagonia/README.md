@@ -33,7 +33,7 @@ Analizar la evolución de la participación de las provincias patagónicas (Neuq
    - **Método 2 — Test t de Welch:** comparación de la participación patagónica entre los sub-períodos pre-Vaca Muerta (2004–2013) y post-Vaca Muerta (2014–2024).
    - **Método 3 — Correlación de Pearson y Spearman:** asociación entre la participación del sector extractivo de Neuquén y su participación total en el VAB nacional.
    - **Método 4 — Descomposición sectorial del crecimiento:** atribución del crecimiento provincial entre 2004 y 2024 a la contribución de cada sector.
-5. **Visualizaciones** con storytelling estilo *Our World in Data*: gráfico comunicacional (línea de tiempo de la participación patagónica) y gráfico exploratorio (mapa coroplético de la variación por provincia).
+5. **Visualizaciones**: gráfico comunicacional (línea de tiempo de la participación patagónica) y gráfico exploratorio (mapa coroplético de la variación por provincia).
 
 ## Estructura del repositorio
 
