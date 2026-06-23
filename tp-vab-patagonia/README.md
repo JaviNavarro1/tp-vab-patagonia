@@ -70,9 +70,9 @@ install.packages(c("tidyverse", "readxl", "janitor", "ggtext",
 3. `script/03_analisis.R` — Cálculos principales: participaciones y CAGR (Método 1), test t pre vs. post Vaca Muerta (Método 2), correlaciones de Pearson y Spearman (Método 3) y descomposición sectorial del crecimiento (Método 4). Guarda resultados en `output/tablas/`.
 4. `script/04_visualizaciones.R` — Genera el gráfico comunicacional (línea de tiempo) y el gráfico exploratorio (mapa coroplético) en `output/graficos/`.
 
-Cada script crea automáticamente las carpetas de salida que necesita, por lo que pueden ejecutarse en orden sin pasos previos manuales.
+Cada script crea las carpetas de salida que necesita, por lo que pueden ejecutarse en orden sin pasos previos manuales.
 
-**Configuración del directorio de trabajo:** los scripts contienen una línea `setwd(...)` con una ruta personal al inicio. Antes de ejecutar, **ajustar esa línea** a la ruta donde se clonó el repositorio, o abrir el proyecto en RStudio mediante un archivo `.Rproj` que setea el directorio automáticamente.
+**Configuración del directorio de trabajo:** los scripts contienen una línea `setwd(...)` con una ruta personal al inicio. Antes de ejecutar, **ajustar esa línea** a la ruta donde se clonó el repositorio.
 
 ## Conclusiones principales
 
