@@ -13,7 +13,7 @@ library(readxl)
 
 # install.packages(janitor)
 # Definir directorio de trabajo
-setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\TP)')
+setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\tp-vab-patagonia)')
 
 # Definimos la ruta al archivo original (almacenado en raw/ sin modificar)
 archivo <- "raw/Jurisdiccion_52sectores.xlsx"
@@ -267,3 +267,4 @@ write_excel_csv(vab_tidy, "input/Jurisdiccion_52sectores_tidy.csv")
 
 cat("Limpieza finalizada. Dataset guardado en input/Jurisdiccion_52sectores_tidy.csv\n")
 cat("Dimensiones:", nrow(vab_tidy), "filas x", ncol(vab_tidy), "columnas\n")
+

@@ -20,7 +20,7 @@ library(geoAr)
 options(scipen = 999)
 
 # Definir el directorio de trabajo (ajustar según corresponda)
-setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\TP)')
+setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\tp-vab-patagonia)')
 
 # Carpeta de gráficos
 if (!dir.exists("output/graficos")) dir.create("output/graficos", recursive = TRUE)
@@ -71,13 +71,14 @@ theme_owid <- function(base_size = 13, base_family = "") {
 # final), línea de referencia para el nivel inicial.
 # ==============================================================================
 
-patagonia <- c("Neuquen", "Chubut", "Santa Cruz", "Rio Negro", "Tierra del Fuego")
+patagonia_pat <- regex("Chubut|Neuqu.n|R.o Negro|Santa Cruz|Tierra del Fuego",
+                       ignore_case = TRUE)
 
 evolucion_patagonia <- vab_tidy |>
   group_by(anio) |>
   mutate(vab_nacional = sum(vab, na.rm = TRUE)) |>
   ungroup() |>
-  filter(provincia %in% patagonia) |>
+  filter(str_detect(provincia, patagonia_pat)) |>
   group_by(anio) |>
   summarise(
     vab_patagonia = sum(vab, na.rm = TRUE),
@@ -370,3 +371,4 @@ ggsave("output/graficos/grafico_exploratorio.png", g_mapa,
 cat("\nGráficos guardados en output/graficos/:\n")
 cat("  - grafico_comunicacional.png\n")
 cat("  - grafico_exploratorio.png\n")
+

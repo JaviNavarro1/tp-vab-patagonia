@@ -15,7 +15,7 @@ library(e1071)   # para skewness()
 options(scipen = 999)
 
 # Definir el directorio de trabajo (ajustar según corresponda)
-setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\TP)')
+setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\tp-vab-patagonia)')
 
 # Carpeta de tablas
 if (!dir.exists("output/tablas")) dir.create("output/tablas", recursive = TRUE)
@@ -29,36 +29,55 @@ glimpse(vab_tidy)
 # ==============================================================================
 # 1. DEFINICIÓN DE REGIONES (estándar INDEC, con CABA por separado)
 # ==============================================================================
+# Usamos str_detect() con regex permisivos para cubrir variantes en los
+# nombres (con o sin tildes, abreviaturas, etc.). Esto es más robusto que un
+# left_join() con nombres exactos.
 
-regiones <- tribble(
-  ~provincia,                ~region,
-  "Buenos Aires",            "Pampeana",
-  "Ciudad de Buenos Aires",  "CABA",
-  "Cordoba",                 "Pampeana",
-  "Entre Rios",              "Pampeana",
-  "La Pampa",                "Pampeana",
-  "Santa Fe",                "Pampeana",
-  "Catamarca",               "NOA",
-  "Jujuy",                   "NOA",
-  "La Rioja",                "NOA",
-  "Salta",                   "NOA",
-  "Santiago del Estero",     "NOA",
-  "Tucuman",                 "NOA",
-  "Chaco",                   "NEA",
-  "Corrientes",              "NEA",
-  "Formosa",                 "NEA",
-  "Misiones",                "NEA",
-  "Mendoza",                 "Cuyo",
-  "San Juan",                "Cuyo",
-  "San Luis",                "Cuyo",
-  "Chubut",                  "Patagonia",
-  "Neuquen",                 "Patagonia",
-  "Rio Negro",               "Patagonia",
-  "Santa Cruz",              "Patagonia",
-  "Tierra del Fuego",        "Patagonia"
-)
+vab_tidy <- vab_tidy |>
+  mutate(region = case_when(
+    # Pampeana
+    str_detect(provincia, regex("^Buenos Aires$", ignore_case = TRUE))      ~ "Pampeana",
+    str_detect(provincia, regex("C.rdoba",        ignore_case = TRUE))      ~ "Pampeana",
+    str_detect(provincia, regex("Entre R.os",     ignore_case = TRUE))      ~ "Pampeana",
+    str_detect(provincia, regex("La Pampa",       ignore_case = TRUE))      ~ "Pampeana",
+    str_detect(provincia, regex("Santa Fe",       ignore_case = TRUE))      ~ "Pampeana",
+    # CABA (jurisdicción separada por su perfil productivo distinto)
+    str_detect(provincia, regex("Ciudad|CABA|Aut.noma", ignore_case = TRUE)) ~ "CABA",
+    # NOA
+    str_detect(provincia, regex("Catamarca",           ignore_case = TRUE))  ~ "NOA",
+    str_detect(provincia, regex("Jujuy",               ignore_case = TRUE))  ~ "NOA",
+    str_detect(provincia, regex("La Rioja",            ignore_case = TRUE))  ~ "NOA",
+    str_detect(provincia, regex("Salta",               ignore_case = TRUE))  ~ "NOA",
+    str_detect(provincia, regex("Santiago del Estero", ignore_case = TRUE))  ~ "NOA",
+    str_detect(provincia, regex("Tucum.n",             ignore_case = TRUE))  ~ "NOA",
+    # NEA
+    str_detect(provincia, regex("Chaco",      ignore_case = TRUE))           ~ "NEA",
+    str_detect(provincia, regex("Corrientes", ignore_case = TRUE))           ~ "NEA",
+    str_detect(provincia, regex("Formosa",    ignore_case = TRUE))           ~ "NEA",
+    str_detect(provincia, regex("Misiones",   ignore_case = TRUE))           ~ "NEA",
+    # Cuyo
+    str_detect(provincia, regex("Mendoza",  ignore_case = TRUE))             ~ "Cuyo",
+    str_detect(provincia, regex("San Juan", ignore_case = TRUE))             ~ "Cuyo",
+    str_detect(provincia, regex("San Luis", ignore_case = TRUE))             ~ "Cuyo",
+    # Patagonia
+    str_detect(provincia, regex("Chubut",           ignore_case = TRUE))     ~ "Patagonia",
+    str_detect(provincia, regex("Neuqu.n",          ignore_case = TRUE))     ~ "Patagonia",
+    str_detect(provincia, regex("R.o Negro",        ignore_case = TRUE))     ~ "Patagonia",
+    str_detect(provincia, regex("Santa Cruz",       ignore_case = TRUE))     ~ "Patagonia",
+    str_detect(provincia, regex("Tierra del Fuego", ignore_case = TRUE))     ~ "Patagonia",
+    # Cualquier otro caso queda como NA (para detectar errores)
+    TRUE ~ NA_character_
+  ))
 
-vab_tidy <- vab_tidy |> left_join(regiones, by = "provincia")
+# Verificación: todas las jurisdicciones deberían tener región asignada
+provincias_sin_region <- unique(vab_tidy$provincia[is.na(vab_tidy$region)])
+if (length(provincias_sin_region) > 0) {
+  warning("Provincias sin región asignada: ",
+          paste(provincias_sin_region, collapse = ", "))
+} else {
+  cat("Asignación de regiones OK: las", n_distinct(vab_tidy$provincia),
+      "jurisdicciones tienen región.\n")
+}
 
 
 # ==============================================================================
@@ -255,3 +274,4 @@ print(distribucion_por_region)
 
 
 cat("\n\nScript exploratorio finalizado. Tablas guardadas en output/tablas/\n")
+

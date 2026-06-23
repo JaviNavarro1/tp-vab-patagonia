@@ -16,7 +16,7 @@ library(tidyverse)
 options(scipen = 999)
 
 # Definir el directorio de trabajo (ajustar según corresponda)
-setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\TP)')
+setwd(r'(C:\Users\Javi\Desktop\Ciencia de datos\tp-vab-patagonia)')
 
 # Carpeta de tablas
 if (!dir.exists("output/tablas")) dir.create("output/tablas", recursive = TRUE)
@@ -24,8 +24,52 @@ if (!dir.exists("output/tablas")) dir.create("output/tablas", recursive = TRUE)
 # Carga del dataset limpio
 vab_tidy <- read_csv("input/Jurisdiccion_52sectores_tidy.csv")
 
-# Provincias patagónicas (foco del análisis)
-patagonia <- c("Neuquen", "Chubut", "Santa Cruz", "Rio Negro", "Tierra del Fuego")
+# ==============================================================================
+# COLUMNAS AUXILIARES: REGIÓN y FLAGS DE PROVINCIA
+# ==============================================================================
+# Usamos str_detect() con regex permisivos para manejar nombres con o sin
+# tildes (Neuquén/Neuquen, Río Negro/Rio Negro, etc.), evitando fallas en
+# los filtros del resto del script.
+
+vab_tidy <- vab_tidy |>
+  mutate(
+    region = case_when(
+      str_detect(provincia, regex("^Buenos Aires$", ignore_case = TRUE))      ~ "Pampeana",
+      str_detect(provincia, regex("C.rdoba",        ignore_case = TRUE))      ~ "Pampeana",
+      str_detect(provincia, regex("Entre R.os",     ignore_case = TRUE))      ~ "Pampeana",
+      str_detect(provincia, regex("La Pampa",       ignore_case = TRUE))      ~ "Pampeana",
+      str_detect(provincia, regex("Santa Fe",       ignore_case = TRUE))      ~ "Pampeana",
+      str_detect(provincia, regex("Ciudad|CABA|Aut.noma", ignore_case = TRUE)) ~ "CABA",
+      str_detect(provincia, regex("Catamarca",           ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("Jujuy",               ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("La Rioja",            ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("Salta",               ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("Santiago del Estero", ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("Tucum.n",             ignore_case = TRUE))  ~ "NOA",
+      str_detect(provincia, regex("Chaco",      ignore_case = TRUE))           ~ "NEA",
+      str_detect(provincia, regex("Corrientes", ignore_case = TRUE))           ~ "NEA",
+      str_detect(provincia, regex("Formosa",    ignore_case = TRUE))           ~ "NEA",
+      str_detect(provincia, regex("Misiones",   ignore_case = TRUE))           ~ "NEA",
+      str_detect(provincia, regex("Mendoza",  ignore_case = TRUE))             ~ "Cuyo",
+      str_detect(provincia, regex("San Juan", ignore_case = TRUE))             ~ "Cuyo",
+      str_detect(provincia, regex("San Luis", ignore_case = TRUE))             ~ "Cuyo",
+      str_detect(provincia, regex("Chubut",           ignore_case = TRUE))     ~ "Patagonia",
+      str_detect(provincia, regex("Neuqu.n",          ignore_case = TRUE))     ~ "Patagonia",
+      str_detect(provincia, regex("R.o Negro",        ignore_case = TRUE))     ~ "Patagonia",
+      str_detect(provincia, regex("Santa Cruz",       ignore_case = TRUE))     ~ "Patagonia",
+      str_detect(provincia, regex("Tierra del Fuego", ignore_case = TRUE))     ~ "Patagonia",
+      TRUE                                                                     ~ NA_character_
+    ),
+    # Flag para Neuquén (foco de la hipótesis principal y de los métodos 3 y 4)
+    es_neuquen = str_detect(provincia, regex("Neuqu.n", ignore_case = TRUE))
+  )
+
+# Verificación
+if (any(is.na(vab_tidy$region))) {
+  warning("Hay provincias sin región asignada: ",
+          paste(unique(vab_tidy$provincia[is.na(vab_tidy$region)]),
+                collapse = ", "))
+}
 
 # Función auxiliar: tasa de crecimiento anual compuesto (CAGR)
 cagr <- function(valor_final, valor_inicial, n_anios) {
@@ -44,7 +88,7 @@ evolucion_patagonia <- vab_tidy |>
   group_by(anio) |>
   mutate(vab_nacional = sum(vab, na.rm = TRUE)) |>
   ungroup() |>
-  filter(provincia %in% patagonia) |>
+  filter(region == "Patagonia") |>
   group_by(anio) |>
   summarise(
     vab_patagonia = sum(vab, na.rm = TRUE),
@@ -61,7 +105,7 @@ vab_anual_total <- vab_tidy |>
   group_by(anio) |>
   summarise(
     vab_nacional  = sum(vab, na.rm = TRUE),
-    vab_patagonia = sum(vab[provincia %in% patagonia], na.rm = TRUE),
+    vab_patagonia = sum(vab[region == "Patagonia"], na.rm = TRUE),
     .groups       = "drop"
   )
 
@@ -72,7 +116,7 @@ cagr_patagonia  <- cagr(vab_anual_total |> filter(anio == 2024) |> pull(vab_pata
 
 # CAGR del VAB extractivo de Neuquén: pre y post Vaca Muerta
 vab_nqn_ext <- vab_tidy |>
-  filter(provincia == "Neuquen", es_extractivo) |>
+  filter(es_neuquen, es_extractivo) |>
   group_by(anio) |>
   summarise(vab_ext = sum(vab, na.rm = TRUE), .groups = "drop")
 
@@ -152,7 +196,7 @@ if (resultado_t$p.value < 0.05) {
 # su participación total en el VAB nacional, a lo largo de los 21 años.
 
 serie_neuquen <- vab_tidy |>
-  filter(provincia == "Neuquen") |>
+  filter(es_neuquen) |>
   group_by(anio) |>
   mutate(vab_nacional = sum(vab_tidy$vab[vab_tidy$anio == first(anio)], na.rm = TRUE)) |>
   summarise(
@@ -281,3 +325,4 @@ print(sector_lider |> select(provincia, sector_lider,
 
 
 cat("\n\nScript de análisis finalizado. Tablas guardadas en output/tablas/\n")
+
