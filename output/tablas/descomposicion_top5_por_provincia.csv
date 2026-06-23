@@ -1,0 +1,121 @@
+﻿"provincia","ranking","sector","contribucion_pp","es_extractivo"
+"Buenos Aires",1,"Comercio mayorista, minorista y reparaciones",7.488596892946093,FALSE
+"Buenos Aires",2,"Comunicaciones",5.715209599921497,FALSE
+"Buenos Aires",3,"Propiedad de la vivienda*",3.72943791013875,FALSE
+"Buenos Aires",4,"Fabricación de sustancias y productos químicos",3.00238692858705,FALSE
+"Buenos Aires",5,"Elaboración de productos alimenticios y bebidas",2.946025740603177,FALSE
+"Catamarca",1,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",7.576446638462429,FALSE
+"Catamarca",2,"Comunicaciones",5.467019160889479,FALSE
+"Catamarca",3,"Construcción",4.697892119141164,FALSE
+"Catamarca",4,"Resto",3.4034510764751094,FALSE
+"Catamarca",5,"Enseñanza pública",2.8914823942552954,FALSE
+"Chaco",1,"Resto",15.748984252977873,FALSE
+"Chaco",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",8.324345745868643,FALSE
+"Chaco",3,"Comercio mayorista, minorista y reparaciones",7.543856504601537,FALSE
+"Chaco",4,"Enseñanza pública",6.019428817196013,FALSE
+"Chaco",5,"Comunicaciones",5.4224085765851155,FALSE
+"Chubut",1,"Pesca",4.052340705948443,FALSE
+"Chubut",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",3.467281010203898,FALSE
+"Chubut",3,"Transporte",2.7573762404651405,FALSE
+"Chubut",4,"Propiedad de la vivienda*",2.6537635106706854,FALSE
+"Chubut",5,"Elaboración de productos alimenticios y bebidas",2.450831737831848,FALSE
+"Ciudad de Buenos Aires",1,"Resto",9.89391533727287,FALSE
+"Ciudad de Buenos Aires",2,"Comunicaciones",4.815774983117605,FALSE
+"Ciudad de Buenos Aires",3,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",3.286234708455691,FALSE
+"Ciudad de Buenos Aires",4,"Comercio mayorista, minorista y reparaciones",3.015754453725148,FALSE
+"Ciudad de Buenos Aires",5,"Salud privada",3.0076038611706504,FALSE
+"Cordoba",1,"Comercio mayorista, minorista y reparaciones",12.306338891975486,FALSE
+"Cordoba",2,"Agricultura, ganaderia, caza y servicios conexos",9.969147336918091,FALSE
+"Cordoba",3,"Resto",3.761212665740013,FALSE
+"Cordoba",4,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",3.7051357356488084,FALSE
+"Cordoba",5,"Elaboración de productos alimenticios y bebidas",3.4678475466506256,FALSE
+"Corrientes",1,"Comercio mayorista, minorista y reparaciones",13.836478700312444,FALSE
+"Corrientes",2,"Generación captación y distribución de energía eléctrica",6.039829142046982,FALSE
+"Corrientes",3,"Resto",5.576799847683412,FALSE
+"Corrientes",4,"Comunicaciones",4.504105053699978,FALSE
+"Corrientes",5,"Enseñanza pública",4.180634409906396,FALSE
+"Entre Rios",1,"Comercio mayorista, minorista y reparaciones",16.978248061406383,FALSE
+"Entre Rios",2,"Agricultura, ganaderia, caza y servicios conexos",6.752357900050083,FALSE
+"Entre Rios",3,"Elaboración de productos alimenticios y bebidas",5.641563585424764,FALSE
+"Entre Rios",4,"Comunicaciones",4.877152599765557,FALSE
+"Entre Rios",5,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",4.652850395247196,FALSE
+"Formosa",1,"Comunicaciones",8.701182716978757,FALSE
+"Formosa",2,"Comercio mayorista, minorista y reparaciones",6.429261072091222,FALSE
+"Formosa",3,"Salud pública",4.645903912513247,FALSE
+"Formosa",4,"Enseñanza pública",3.73123490039416,FALSE
+"Formosa",5,"Silvicultura, extracción de madera y servicios conexos",3.314665406883207,FALSE
+"Jujuy",1,"Comunicaciones",15.348942953710305,FALSE
+"Jujuy",2,"Extracción de minerales metalíferos. Explotación de  minas y canteras n.c.p.",12.02174396505721,TRUE
+"Jujuy",3,"Resto",7.581548200598222,FALSE
+"Jujuy",4,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",6.3355787873593945,FALSE
+"Jujuy",5,"Comercio mayorista, minorista y reparaciones",5.3049453981955725,FALSE
+"La Pampa",1,"Comercio mayorista, minorista y reparaciones",19.132604540994357,FALSE
+"La Pampa",2,"Agricultura, ganaderia, caza y servicios conexos",12.055069514119946,FALSE
+"La Pampa",3,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",6.046852883952267,FALSE
+"La Pampa",4,"Resto",4.703623801067766,FALSE
+"La Pampa",5,"Enseñanza pública",2.8382390306042655,FALSE
+"La Rioja",1,"Restaurantes, bares y cantinas",4.449666850819091,FALSE
+"La Rioja",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",4.325434472343337,FALSE
+"La Rioja",3,"Enseñanza pública",3.7421167550076504,FALSE
+"La Rioja",4,"Resto",3.6891350156367437,FALSE
+"La Rioja",5,"Propiedad de la vivienda*",3.0113529708950244,FALSE
+"Mendoza",1,"Comercio mayorista, minorista y reparaciones",5.134964931742002,FALSE
+"Mendoza",2,"Comunicaciones",4.567657857820881,FALSE
+"Mendoza",3,"Resto",3.576315962404428,FALSE
+"Mendoza",4,"Propiedad de la vivienda*",2.468214456570687,FALSE
+"Mendoza",5,"Elaboración de productos alimenticios y bebidas",2.355166866912078,FALSE
+"Misiones",1,"Generación captación y distribución de energía eléctrica",6.26014014771428,FALSE
+"Misiones",2,"Comunicaciones",6.232505336766893,FALSE
+"Misiones",3,"Salud pública",4.634807125174613,FALSE
+"Misiones",4,"Enseñanza privada",4.282624366538937,FALSE
+"Misiones",5,"Propiedad de la vivienda*",4.045199875418034,FALSE
+"Neuquen",1,"Extracción de carbón y lignito; extracción de turba. Extracción de petróleo crudo y gas natural; actividades de servicios relacionadas con la extracción de petróleo y gas, excepto las actividades de prospección.",51.47085244139768,TRUE
+"Neuquen",2,"Enseñanza pública",6.746573213889699,FALSE
+"Neuquen",3,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",5.509617641944233,FALSE
+"Neuquen",4,"Comercio mayorista, minorista y reparaciones",4.726771411192004,FALSE
+"Neuquen",5,"Construcción",4.708211962099516,FALSE
+"Rio Negro",1,"Comercio mayorista, minorista y reparaciones",8.54417499615855,FALSE
+"Rio Negro",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",6.817547645164295,FALSE
+"Rio Negro",3,"Propiedad de la vivienda*",5.516127518937578,FALSE
+"Rio Negro",4,"Enseñanza pública",5.133638164297443,FALSE
+"Rio Negro",5,"Comunicaciones",3.516761561922436,FALSE
+"Salta",1,"Comercio mayorista, minorista y reparaciones",10.227921107433048,FALSE
+"Salta",2,"Enseñanza pública",8.82917985193651,FALSE
+"Salta",3,"Comunicaciones",5.915442597663031,FALSE
+"Salta",4,"Construcción",4.54690744045767,FALSE
+"Salta",5,"Resto",4.3982493567790675,FALSE
+"San Juan",1,"Extracción de minerales metalíferos. Explotación de  minas y canteras n.c.p.",20.195845785492715,TRUE
+"San Juan",2,"Resto",6.879911776225948,FALSE
+"San Juan",3,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",5.59193511208747,FALSE
+"San Juan",4,"Comercio mayorista, minorista y reparaciones",5.138962201745942,FALSE
+"San Juan",5,"Comunicaciones",3.6203868479050376,FALSE
+"San Luis",1,"Agricultura, ganaderia, caza y servicios conexos",5.575770782637214,FALSE
+"San Luis",2,"Comercio mayorista, minorista y reparaciones",4.824920830582744,FALSE
+"San Luis",3,"Comunicaciones",3.198444944379836,FALSE
+"San Luis",4,"Propiedad de la vivienda*",2.752140893133719,FALSE
+"San Luis",5,"Salud pública",2.509871901929672,FALSE
+"Santa Cruz",1,"Extracción de minerales metalíferos. Explotación de  minas y canteras n.c.p.",12.247304445084463,TRUE
+"Santa Cruz",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",4.345565914336231,FALSE
+"Santa Cruz",3,"Pesca",4.202509247841624,FALSE
+"Santa Cruz",4,"Enseñanza pública",2.9529625236333352,FALSE
+"Santa Cruz",5,"Comercio mayorista, minorista y reparaciones",2.891006265735779,FALSE
+"Santa Fe",1,"Comercio mayorista, minorista y reparaciones",7.317914192291997,FALSE
+"Santa Fe",2,"Comunicaciones",3.1841759320191856,FALSE
+"Santa Fe",3,"Elaboración de productos alimenticios y bebidas",3.1609798331791463,FALSE
+"Santa Fe",4,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",3.1320338414310367,FALSE
+"Santa Fe",5,"Propiedad de la vivienda*",2.5353545271772826,FALSE
+"Santiago del Estero",1,"Agricultura, ganaderia, caza y servicios conexos",33.931033678060516,FALSE
+"Santiago del Estero",2,"Comercio mayorista, minorista y reparaciones",21.163795549180968,FALSE
+"Santiago del Estero",3,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",5.130895664464733,FALSE
+"Santiago del Estero",4,"Transporte",3.3665734240844745,FALSE
+"Santiago del Estero",5,"Comunicaciones",3.1312845450215803,FALSE
+"Tierra del Fuego",1,"Fabricación de equipos y aparatos de radio, televisión y comunicaciones",20.28136427409162,FALSE
+"Tierra del Fuego",2,"Comercio mayorista, minorista y reparaciones",12.675926227993198,FALSE
+"Tierra del Fuego",3,"Transporte",6.9147923478609,FALSE
+"Tierra del Fuego",4,"Enseñanza pública",5.384965438836354,FALSE
+"Tierra del Fuego",5,"Enseñanza privada",4.03826891595278,FALSE
+"Tucuman",1,"Comercio mayorista, minorista y reparaciones",8.86086090293001,FALSE
+"Tucuman",2,"Administración pública y defensa; Planes de seguridad social de afiliación obligatoria",7.1879437912777675,FALSE
+"Tucuman",3,"Resto",6.023889173422189,FALSE
+"Tucuman",4,"Elaboración de productos alimenticios y bebidas",4.349320401395175,FALSE
+"Tucuman",5,"Comunicaciones",4.259047668399233,FALSE
