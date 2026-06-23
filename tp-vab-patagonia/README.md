@@ -80,7 +80,7 @@ Cada script crea las carpetas de salida que necesita, por lo que pueden ejecutar
 - El recorrido no fue lineal: la participación cayó hasta un mínimo histórico de **8,11% en 2011** y luego se recuperó sostenidamente desde 2014, coincidiendo con la intensificación de Vaca Muerta.
 - El motor del cambio es **Neuquén**, cuyo VAB extractivo pasó de representar el 31,4% al **52,7% del extractivo nacional** entre 2004 y 2024, con un quiebre marcado en su CAGR extractivo: **–4,31% anual pre-VM (2004–2014) vs. +11,46% anual post-VM (2014–2024)**.
 - El resto de la Patagonia (Santa Cruz, Chubut, Río Negro y Tierra del Fuego) **perdió peso** en el VAB extractivo nacional. La transformación regional es entonces de **concentración productiva en Neuquén**, no de expansión patagónica uniforme.
-- A nivel inferencial, el test t entre los sub-períodos pre y post Vaca Muerta enfrenta una limitación de poder estadístico (n=10 y n=11), por lo que su interpretación se hace a la luz de la evidencia descriptiva y de la descomposición sectorial, que confirman el rol central del hidrocarburo en el crecimiento neuquino.
+- A nivel inferencial, el test t entre los sub-períodos pre y post Vaca Muerta enfrenta una limitación de poder estadístico (n=10 y n=11), por lo que su interpretación se hace a partir de la evidencia descriptiva y de la descomposición sectorial, que confirman el rol central del hidrocarburo en el crecimiento neuquino.
 
 ## Fuente
 
