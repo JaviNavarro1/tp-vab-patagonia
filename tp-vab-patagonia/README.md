@@ -5,8 +5,8 @@ Facultad de Ciencias Económicas, Universidad de Buenos Aires.
 
 ## Integrantes
 
-- Miru
-- Javi
+
+- Javier Navarro - Nro. de registro: 886569
 
 ## Objetivo
 
